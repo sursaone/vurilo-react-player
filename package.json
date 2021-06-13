@@ -1,0 +1,53 @@
+{
+  "name": "vurilo-react-player",
+  "version": "0.0.1",
+  "description": "vurilo-react-player is a web video player which wraps videojs ",
+  "author": "sursaone",
+  "license": "MIT",
+  "repository": "sursaone/vurilo-react-player",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.ts",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "build": "microbundle --jsx React -f es,cjs",
+    "start": "microbundle watch --jsx React -f es,cjs",
+    "size": "bundlesize",
+    "prepare": "npm run build && npm run size",
+    "release": "npm run prepare && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "peerDependencies": {
+    "react": "^17.x",
+    "react-dom": "^17.x",
+    "react-player": "^2.9.x"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.38",
+    "@types/react": "^16.9.27",
+    "@types/react-dom": "^16.9.7",
+    "autoprefixer": "^10.2.6",
+    "bundlesize": "^0.18.1",
+    "microbundle": "^0.13.3",
+    "postcss": "^8.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-player": "^2.9.0",
+    "tailwindcss": "^2.1.4",
+    "typescript": "^4.3.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "bundlesize": [
+    {
+      "path": "./dist/index.js",
+      "maxSize": "3 kB"
+    },
+    {
+      "path": "./dist/index.modern.js",
+      "maxSize": "3 kB"
+    }
+  ]
+}
