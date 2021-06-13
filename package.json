@@ -1,6 +1,6 @@
 {
   "name": "vurilo-react-player",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "vurilo-react-player is a web video player which wraps videojs ",
   "author": "sursaone",
   "license": "MIT",
@@ -16,7 +16,8 @@
     "start": "microbundle watch --jsx React -f es,cjs",
     "size": "bundlesize",
     "prepare": "npm run build && npm run size",
-    "release": "npm run prepare && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "npm run prepare && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^17.x",
@@ -35,7 +36,8 @@
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
     "tailwindcss": "^2.1.4",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.2",
+    "semantic-release": "^17.4.3"
   },
   "files": [
     "dist"
